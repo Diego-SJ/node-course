@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h1 Service file
+  a(href="/download/Diego") Open file
+
+  h1 Video
+  p
+  a(href="/videoStatic") Static video
+  p
+  a(href="/videoStream") Stream video
+  p
+  a(href="/videoStreamRange") Stream video with range
+
+  h1 Forms
+  p
+  div.container
+    h2 Contact
+    form(name="myForm" action="/confirm" method="POST")
+      div.field
+        label.label Name
+        input.input(type="text" name="name" placeholder="your name")
+      div.field
+        label.label Email
+        input.input(type="email" name="email" placeholder="your email")
+      div.field
+        label.label Message
+        input.input(type="text" name="message" placeholder="your message")
+      div.field
+        input.input(type="submit" value="Send")
+  
+  div.container
+    h2 My file
+    form(name="myForm2" action="/sendFiles" method="POST" enctype="multipart/form-data")
+      div.field
+        label.label Name
+        input.input(type="text" name="name" placeholder="your name")
+      div.field
+        label.label File
+        input.input(type="file" name="photo" placeholder="your file")
+      div.field
+        input.input(type="submit" value="Send")
+
